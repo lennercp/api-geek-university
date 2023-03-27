@@ -5,7 +5,7 @@ from jose import jwt, JWTError
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from pydantic import BaseModel
-
+from typing import Optional
 from core.database import Session
 from core.auth import oauth2_schema
 from core.configs import settings
@@ -13,7 +13,7 @@ from models.usuario_model import UsuarioModel
 
 
 class TokenData(BaseModel):
-    username: str | None = None
+    username: Optional[str]= None
 
 async def get_session() -> Generator:
     session: AsyncSession = Session()

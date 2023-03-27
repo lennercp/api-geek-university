@@ -1,12 +1,12 @@
 from pydantic import BaseModel, HttpUrl
-
+from typing import Optional
 
 class ArtigoSchema(BaseModel):
-    id: int|None = None
+    id: Optional[int] = None
     titulo: str
     descricao: str
     url_fonte: HttpUrl
-    usuario_id: int|None
+    usuario_id: Optional[int] = None
 
     class Config:
         orm_mode = True
