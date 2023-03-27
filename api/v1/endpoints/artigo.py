@@ -35,7 +35,6 @@ async def get_artigos(db: AsyncSession = Depends(get_session)):
         query = select(ArtigoModel)
         result = await session.execute(query)
         artigos: List[ArtigoModel] = result.scalars().unique().all()
-        print(artigos[0].titulo)
 
         return artigos
 
