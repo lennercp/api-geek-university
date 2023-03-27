@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     DB_URL: str = 'postgresql+asyncpg://lenner:mg1qD7C28e4xrr73qb6p2SZKC33xS4Va@dpg-cggu2kseoogqfc4kag10-a/faculdade'
     DBBaseModel = declarative_base()
 
-    JWT_SECRET: str = getenv(JWT_SECRET)
+    JWT_SECRET: str = getenv('JWT_SECRET')
     ALGORITHM: str = 'HS256'
     ACESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7
 
